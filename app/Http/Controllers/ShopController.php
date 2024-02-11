@@ -60,7 +60,7 @@ class ShopController extends Controller
         if ($validator->fails()) {
             $response = [
                 'status' => false,
-                'message' => 'Validation error.',
+                'msg' => 'Validation error.',
             ];
 
             if(!empty($validator->errors())){
@@ -78,13 +78,13 @@ class ShopController extends Controller
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
             $image->move(public_path('images'), $imageName);
-            $shop->image = 'images/' . $imageName;
+            $shop->image =  $imageName;
         }
         $shop->save();
 
         $response = [
             'status' => true,
-            'message' => 'Shop created successfully',
+            'msg' => 'Shop created successfully',
         ];
         return response()->json($response);    }
 
@@ -119,7 +119,7 @@ class ShopController extends Controller
         if ($validator->fails()) {
             $response = [
                 'status' => false,
-                'message' => 'Validation error.',
+                'msg' => 'Validation error.',
             ];
 
             if(!empty($validator->errors())){
@@ -142,13 +142,13 @@ class ShopController extends Controller
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
             $image->move(public_path('images'), $imageName);
-            $shop->image = 'images/' . $imageName;
+            $shop->image =  $imageName;
         }
         $shop->save();
 
         $response = [
             'status' => true,
-            'message' => 'Shop updated successfully',
+            'msg' => 'Shop updated successfully',
         ];
         return response()->json($response);    
     }
@@ -166,7 +166,7 @@ class ShopController extends Controller
 
         $response = [
             'status' => true,
-            'message' => 'Shop deleted successfully',
+            'msg' => 'Shop deleted successfully',
         ];
         return response()->json($response);    
     }

@@ -73,7 +73,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             $response = [
                 'status' => false,
-                'message' => 'Validation error.',
+                'msg' => 'Validation error.',
             ];
 
             if(!empty($validator->errors())){
@@ -99,7 +99,7 @@ class ProductController extends Controller
         $product->save();
         $response = [
             'status' => true,
-            'message' => 'Product created successfully',
+            'msg' => 'Product created successfully',
         ];
         return response()->json($response);
    
@@ -139,7 +139,7 @@ class ProductController extends Controller
         if ($validator->fails()) {
             $response = [
                 'status' => false,
-                'message' => 'Validation error.',
+                'msg' => 'Validation error.',
             ];
 
             if(!empty($validator->errors())){
@@ -171,7 +171,7 @@ class ProductController extends Controller
 
         $response = [
             'status' => true,
-            'message' => 'Product updated successfully',
+            'msg' => 'Product updated successfully',
         ];
         return response()->json($response);    
     }
@@ -190,7 +190,7 @@ class ProductController extends Controller
 
         $response = [
             'status' => true,
-            'message' => 'Product deleted successfully',
+            'msg' => 'Product deleted successfully',
         ];
         return response()->json($response);      
     }

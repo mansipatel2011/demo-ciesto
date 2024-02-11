@@ -39,7 +39,7 @@
                                 <label for="image">Image</label>
                                 <input type="file" name="image" class="form-control">
                                 @if (isset($shop) && $shop->image)
-                                    <img src="{{ asset($shop->image) }}" alt="Current Image" class="img-thumbnail mt-2" width="150px" height="150px">
+                                    <img src="{{ asset('images/'.$shop->image) }}" alt="Current Image" class="img-thumbnail mt-2" width="150px" height="150px">
                                     <p class="text-muted">Leave this field empty if you don't want to change the image.</p>
                                 @endif
                                 <span class="image_error error"></span>                              
